@@ -2,7 +2,7 @@
   --primary: #9c27b0;
   --secondary: #ffce00;
   --primarydark: #89119d;
-  --secondarydark: rgb(233,287,2);
+  --secondarydark: rgb(233,187,2);
   --white: #fff;
   --black: #000;
 
@@ -12,7 +12,7 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
 }
-*, *::before, *::after {
+*, *:before, *:after {
   box-sizing: inherit;
 }
 /*Globales*/
@@ -30,7 +30,7 @@ a {
   text-decoration: none;
 }
 img {
-  max-width: 100%;
+  width: 100%;
 }
 .container {
   max-width: 120rem;
@@ -97,8 +97,7 @@ h3 {
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 2rem;
-  row-gap: 2rem;
+  gap: 2rem;
 }
 @media (min-width: 768px) {
   .grid {
@@ -109,9 +108,6 @@ h3 {
 .producto {
   background-color: var(--primarydark);
   padding: 1rem;
-}
-.producto__imagen {
-  width: 100%;
 }
 .producto__nombre {
   font-size: 4rem;
@@ -143,10 +139,10 @@ h3 {
   grid-row: 8 / 9;
 }
 @media (min-width: 768px) {
-.grafico__node {
-  grid-row: 5 / 6;
-  grid-column: 2 / 4;
-}
+  .grafico__node {
+    grid-row: 5 / 6;
+    grid-column: 2 / 4;
+  }
 }
 /*Nosotros*/
 .nosotros {
@@ -186,6 +182,42 @@ h3 {
 .bloque__titulo {
   margin: 0;
 }
-.bloque__imagen {
-  width: 100%;
+/*Producto*/
+@media (min-width: 768px) {
+  .camisa {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+}
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.form__campo {
+  border-color: var(--primarydark);
+  border-width: 1rem;
+  border-style: solid;
+  background-color: transparent;
+  color: var(--white);
+  font-size: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 1rem;
+  appearance: none;
+
+  /* border: 1 rem solid var(--primarydark); */
+}
+.form__submit {
+  background-color: var(--secondary);
+  border: none;
+  font-size: 2rem;
+  font-family: var(--mainFont);
+  padding: 2rem;
+  transition: background-color .3s ease;
+  grid-column: 1 / 3;
+}
+.form__submit:hover {
+  font-size: 2.4rem;
+  cursor: pointer;
+  background-color: var(--secondarydark);
 }
